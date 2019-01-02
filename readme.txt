@@ -7,6 +7,7 @@ When an user run the program, it will generate a new Sudoku solution to be solve
 Created game will be displayed to GUI using JavaFX and the number of empty box is decided by
 difficulties user selects. 
 
+
 Project Development Plan
 
 Development of whole project is separated into small steps listed below.
@@ -22,7 +23,9 @@ Step 2
 2. Implement check function
 3. Implement finish function
 
+
 Class Hierarchy
+
 Main - drives the program
 Solution - includes 9 X 9 cells containing Sudoku solution
 Game - includes 9 X 9 cells that a user can manipulate

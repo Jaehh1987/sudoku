@@ -3,7 +3,7 @@ import javafx.stage.Stage;
 
 public class Displayer extends Application {
 
-    static Game game;
+    Game game;
     
     /*
      * constructor of the class
@@ -15,6 +15,6 @@ public class Displayer extends Application {
     
     public void start(Stage stage) throws Exception {
         
+        
     }
-    
 }

@@ -23,5 +23,12 @@ public class Game {
         // create solution using solution class and assign it to array for future use.
         Solution sol = new Solution(this.size);
         solution = sol.get();
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(" " + solution[i][j]);
+            }
+            System.out.println();
+        }
     }
 }

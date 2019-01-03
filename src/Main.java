@@ -10,22 +10,27 @@ public class Main extends Application{
     static Displayer displayer;
     
     public static void main(String[] args) {
-        
-        
-        // launch GUI
-//        Application.launch(Displayer.class);
         launch();
     }
     
     public void start(Stage stage) throws Exception {
-    	// integer represents Sudoku puzzle size
-    	int size = 9;
-    	GridPane grid = new GridPane();
+        
+        GridPane grid = new GridPane();
+        grid.setGridLinesVisible(true);
+        
+    	Scene scene = new Scene(grid,500,500);
+    	stage.setTitle("SUDOKU");
     	
-    	// instantiate game and displayer object
+        stage.setScene(scene);
+        stage.show();
+        
+        // integer represents Sudoku puzzle size
+        int size = 9;
+        
+        // instantiate game and displayer object
         // displayer object takes game object as an argument
-    	game = new Game(size);
-        displayer = new Displayer(game);
+        game = new Game(size);
+        displayer = new Displayer(game, grid);
         
         // check the integer size is perfect square or not
         Double sqrtSize = Math.sqrt(size);
@@ -34,15 +39,6 @@ public class Main extends Application{
             return;
         }
         
-    	Scene scene = new Scene(grid,500,500);
-    	stage.setTitle("SUDOKU");
-    	
-        grid.setGridLinesVisible(true);
-
-        
-        stage.setScene(scene);
-        stage.show();
+        displayer.play();
     }
-    
-    
 }

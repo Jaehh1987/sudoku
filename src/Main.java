@@ -1,6 +1,9 @@
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application{
     
     // declare a game and a displayer
     static Game game;
@@ -8,8 +11,21 @@ public class Main {
     
     public static void main(String[] args) {
         
-        // integer represents Sudoku puzzle size
-        int size = 9;
+        
+        // launch GUI
+//        Application.launch(Displayer.class);
+        launch();
+    }
+    
+    public void start(Stage stage) throws Exception {
+    	// integer represents Sudoku puzzle size
+    	int size = 9;
+    	GridPane grid = new GridPane();
+    	
+    	// instantiate game and displayer object
+        // displayer object takes game object as an argument
+    	game = new Game(size);
+        displayer = new Displayer(game);
         
         // check the integer size is perfect square or not
         Double sqrtSize = Math.sqrt(size);
@@ -17,13 +33,16 @@ public class Main {
             System.out.println("Size should be perfect square number!");
             return;
         }
-       
-        // instantiate game and displayer object
-        // displayer object takes game object as an argument
-        game = new Game(size);
-        displayer = new Displayer(game);
         
-        // launch GUI
-        Application.launch(Displayer.class);
+    	Scene scene = new Scene(grid,500,500);
+    	stage.setTitle("SUDOKU");
+    	
+        grid.setGridLinesVisible(true);
+
+        
+        stage.setScene(scene);
+        stage.show();
     }
+    
+    
 }

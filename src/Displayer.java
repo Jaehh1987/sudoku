@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 
 public class Displayer extends Application {
 	
-	GridPane grid;
     Game game;
     TextField textField[][];
     /*
@@ -93,6 +92,5 @@ public class Displayer extends Application {
         		grid.add(textField[i][j], i, j);
         	}
         }
-        
     }
 }
